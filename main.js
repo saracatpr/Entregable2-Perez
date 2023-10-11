@@ -1,5 +1,4 @@
 const inputBox = document.getElementById("input-box")
-
 const listContainer = document.getElementById("list-container")
 
 function addMovie(){
@@ -9,44 +8,29 @@ function addMovie(){
         let li= document.createElement('li');
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
+        saveData();
     }
     inputBox.value = ""
 }
 
 listContainer.addEventListener("click", function(e){
-    if(e.target.tagName === "li"){
+    if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked")
-    }
-}, false);
+        saveData();
+    }else if(e.target.tagName === "SPAN"){
+        e.target.parentElement.remove();
+        saveData();
+    }}, false);
 
+function saveData (){
+    localStorage.setItem("data", listContainer.innerHTML)
+}
 
+function showMovie(){
+    listContainer.innerHTML = localStorage.getItem("data");
+}
 
-// let watchlist = ["Ballerina", "Bottoms", "Suzume"];
-
-
-// let listItems = document.querySelectorAll('li');
-
-// for (let i = 0; i < listItems.length; i++) {
-//     console.log(listItems[i].textContent);
-// }
-
-// for (let i = 0; i < watchlist.length; i++) {
-//     console.log(watchlist[i]);
-// }
-
-// let liArray = [];
-// let liElements = document.querySelectorAll("li");
-// for (let i=0; i<liElements.length; i++){
-//     liArray.push(liElements[i]);
-// }
-
-
-//  const ul = document.querySelector('ul');
-// const lis = ul.querySelectorAll('li');
-// const array = [];
-
-// lis.forEach((li) => {
-//     array.push(li.textContent);
-// });
-
-// console.log(array); 
+showMovie()
