@@ -7,7 +7,7 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background-color: black;
+    background-color: white;
     padding: 10px;
 }
 
@@ -17,7 +17,9 @@
     background-color: white;
     margin: 100px auto 30px;
     padding: 50px 30px 70px;
-    border-radius: 10px;
+    border-radius: 15px;
+    border-color: black;
+    border-style: outset;
 
 }
 
@@ -31,8 +33,10 @@
     align-items: center;
     justify-content: space-between;
     display: flex;
-    background: rgb(233, 233, 233);
-    border-radius: 20px;
+    background: white;
+    border-radius: 15px;
+    border-color: black;
+    border-style: outset;
     padding-left: 10px;
     margin-bottom: 20px;
 }
@@ -50,8 +54,9 @@ button{
     outline: none;
     padding: 15px 40px;
     cursor: pointer;
-    border-radius: 30px;
-    background: rgb(201, 201, 201);
+    border-radius: 15px;
+    background: black;
+    color: white;
     font-size: 17px;   
 }
 
@@ -95,3 +100,14 @@ ul li span{
     line-height: 40px;
     text-align: center;
 }
+
+/* dark mode */
+
+/* body{
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode{
+    background-color: black;
+    color: white;
+} */
